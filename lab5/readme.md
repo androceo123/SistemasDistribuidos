@@ -9,8 +9,10 @@
 - Arturo Encina
 
 ### Web Services a registrar
-- [] Matricular estudiantes
-- [] Recibir nivel de educación
-- [] Recibir grado del estudiante
-- [] Asignar sección
-- [] Cobrar cuota
+- [x] Matricular estudiantes
+- [x] Recibir nivel de educación
+- [x] Recibir grado del estudiante
+- [x] Asignar sección
+- [x] Cobrar cuota
+
+### Falta Cliente

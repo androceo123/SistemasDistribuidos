@@ -7,18 +7,16 @@ public class Estudiante {
     private String nombre;
     private String telefono;
     private String seccion;
-    private Integer montoCuota;
+    private Integer montoCuota = 500000;
     private String nivelEducacion;
     private Integer grado;
 
     protected Estudiante() {}
 
-    public Estudiante(Integer cedula, String nombre, String telefono, String seccion, Integer monto, Integer grado, String nivel) {
+    public Estudiante(Integer cedula, String nombre, String telefono, Integer grado, String nivel) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
-        this.seccion = seccion;
-        this.montoCuota = monto;
         this.grado = grado;
         this.nivelEducacion = nivel;
       }
@@ -26,7 +24,7 @@ public class Estudiante {
       @Override
       public String toString() {
         return String.format(
-            "Persona[cedula=%d, nombre='%s']",
+            "Persona cedula=%d, nombre='%s'",
             cedula, nombre);
       }
 
@@ -86,5 +84,5 @@ public class Estudiante {
         this.nivelEducacion = nivelEducacion;
       }
 
-      
+
 }
