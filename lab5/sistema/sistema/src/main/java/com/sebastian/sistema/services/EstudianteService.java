@@ -1,5 +1,6 @@
 package com.sebastian.sistema.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import com.sebastian.sistema.model.Estudiante;
 @Service
 public class EstudianteService {
 
-    public List<Estudiante> estudiantes;
+    public List<Estudiante> estudiantes = new ArrayList<Estudiante>();
   
     public List<Estudiante> getEstudiantes(){
 
