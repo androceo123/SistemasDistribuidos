@@ -18,6 +18,11 @@ def cargar_variables():
     global api_personas_url_listar, api_personas_url_crear
     api_personas_url_listar = config.get('SeccionApi', 'api_personas_url_listar')
     api_personas_url_crear = config.get('SeccionApi', 'api_personas_url_crear')
+    api_personas_url_cuotareset = config.get('SeccionApi', 'api_personas_url_cuotareset')
+    api_personas_url_cuota = config.get('SeccionApi', 'api_personas_url_cuota')
+    api_personas_url_seccion = config.get('SeccionApi', 'api_personas_url_seccion')
+    api_personas_url_nivel = config.get('SeccionApi', 'api_personas_url_nivel')
+    api_personas_url_grado = config.get('SeccionApi', 'api_personas_url_grado')
 
 
 def listar():
@@ -61,9 +66,10 @@ def crear(cedula: int, nombre: str, apellido: str):
 #######################################################
 ######  Procesamiento principal
 #######################################################
-print("Iniciando " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-cargar_variables()
 
+print("Iniciando " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+cargar_variables() #hasta aca compila
+"""
 print("Listar personas:")
 listar()
 print("________________")
@@ -81,3 +87,4 @@ print("Listar personas:")
 listar()
 
 print("Finalizando " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+"""
