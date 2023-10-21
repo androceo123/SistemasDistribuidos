@@ -9,7 +9,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,7 +43,7 @@ public class EstudianteController {
         if(e != null){
             return new ResponseEntity<>("El estudiante " + e.getNombre() + " está en el grado " + e.getGrado(), HttpStatus.OK);
         }else{
-            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -57,7 +56,7 @@ public class EstudianteController {
         if(e != null){
             return new ResponseEntity<>("El estudiante " + e.getNombre() + " está en " + e.getNivelEducacion(), HttpStatus.OK);
         }else{
-            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -69,9 +68,9 @@ public class EstudianteController {
 
         if(e != null){
             estudianteService.AsignarSeccion(e);
-            return new ResponseEntity<>("Sección asignada correctamente" , HttpStatus.OK);
+            return new ResponseEntity<>("Sección asignada correctamente:" + e.getSeccion() , HttpStatus.OK);
         }else{
-            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -91,7 +90,7 @@ public class EstudianteController {
             
             
         }else{
-            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -107,7 +106,7 @@ public class EstudianteController {
             return new ResponseEntity<>("La cuota actual es de " + e.getMontoCuota() , HttpStatus.OK);
             
         }else{
-            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("No se encontró el estudiante", HttpStatus.NOT_FOUND);
         }
     }
 
